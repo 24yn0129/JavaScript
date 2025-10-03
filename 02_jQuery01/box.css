@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+.box {
+	margin:auto;
+	width:600px;
+	background:#f7f1bd;
+	box-shadow:5px 5px 3px #bfbfbf;
+}
+h1 {
+	background:#e8a9b6;
+	border-top-right-radius:10px;
+	border-top-left-radius:10px;
+	color:#ffffff;
+}
+p {
+	padding:20px;
+}

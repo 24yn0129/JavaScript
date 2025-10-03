@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1 id="c"></h1>
+
+        <script>
+            function show() {
+                const now = new Date();
+                const end = new Date(2026, 2, 14, 10);
+                let sec = (end - now) / 1000;
+
+                if (sec <= 0) {
+                    document.getElementById("c").textContent = "卒業式は終了しました";
+                    clearInterval(id);
+                    return;
+                }
+
+                const d = Math.floor(sec / 86400);
+                sec %= 86400;
+                const h = Math.floor(sec / 3600);
+                sec %= 3600;
+                const m = Math.floor(sec / 60);
+                const s = Math.floor(sec % 60);
+
+                document.getElementById(
+                    "c"
+                ).textContent = `卒業式まであと${d}日${h}時間${m}分${s}秒`;
+            }
+
+            show();
+            const id = setInterval(show, 1000);
+        </script>
+    </body>
+</html>

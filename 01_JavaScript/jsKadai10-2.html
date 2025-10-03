@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1>JavaScriptにおけるDOMの扱い方</h1>
+        <p>ボタン操作でテキストの内容や色を変更します。</p>
+
+        <p id="id1">我が輩は猫である</p>
+
+        <input type="button" value="犬に変更" onclick="changeToDog()" />
+        <input type="button" value="猫に戻す" onclick="changeToCat()" />
+        <input type="button" value="赤色に変更" onclick="changeColor('red')" />
+        <input type="button" value="青色に変更" onclick="changeColor('blue')" />
+        <input type="button" value="黒色に変更" onclick="changeColor('black')" />
+
+        <script>
+            function changeToDog() {
+                document.getElementById("id1").innerHTML = "我が輩は<strong>犬</strong>である";
+            }
+
+            function changeToCat() {
+                document.getElementById("id1").innerHTML = "我が輩は猫である";
+            }
+
+            function changeColor(color) {
+                document.getElementById("id1").style.color = color;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1>JavaScriptにおける値入力と条件式の連携</h1>
+        <p>条件式によってマッチした計算結果をHTMLタグ込みで出力します。</p>
+        <script>
+            let x;
+
+            x = window.prompt("科目の点数を0～100の間で入力してください。");
+            document.write(`<h2>${x}点</h2>`);
+
+            if (x >= 60 && x <= 100) {
+                document.write("<p>おめでとうございます。合格です。</p>");
+            } else if (x >= 0 && x < 60) {
+                document.write("<p>残念ながら不合格です。</p>");
+            } else {
+                document.write("<p>0から100までの値を入力してください。</p>");
+            }
+        </script>
+    </body>
+</html>

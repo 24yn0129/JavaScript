@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <script>
+            let x = window.prompt("1〜255の間で数値を入力してください");
+
+            if (x > 0 && x <= 255) {
+                let bin = parseInt(x, 10).toString(2);
+                document.write("10進数" + x + "を2進数返還した結果は「" + bin + "」です");
+            } else if (x > 255) {
+                document.write("<p>255より大きい値が入力されました</p>");
+            } else {
+                document.write("<p>ゼロ、または不正な値が入力されました</p>");
+            }
+        </script>
+    </body>
+</html>

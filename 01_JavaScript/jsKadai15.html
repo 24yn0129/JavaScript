@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <script>
+            let ua = navigator.userAgent.toLowerCase();
+            let msg = "";
+
+            if (ua.indexOf("firefox") !== -1) {
+                msg = "Firefox で閲覧しています";
+            } else if (ua.indexOf("chrome") !== -1) {
+                msg = "Chrome で閲覧しています";
+            } else {
+                msg = "Firefox、または Chrome を使用してください。";
+            }
+
+            document.write(msg);
+        </script>
+    </body>
+</html>

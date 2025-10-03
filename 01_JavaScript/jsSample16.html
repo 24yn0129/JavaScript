@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1>JavaScriptにおけるDOMの扱い方</h1>
+        <p>DOMによって、「id1」のidがついたpタグの中身を変更します。</p>
+        <p id="id1">我が輩は猫である"></p>
+
+        <input type="button" value="犬に変更" onclick="change()" />
+
+        <script>
+            function change() {
+                //id1の要素のテキストを上書きする
+                document.getElementById("id1").innerHTML = "我が輩は<strong>犬</strong>である";
+            }
+        </script>
+    </body>
+</html>

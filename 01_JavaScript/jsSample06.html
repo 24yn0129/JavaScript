@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1>JavaScriptにおける配列（その１）</h1>
+        <p>配列に値を代入後に計算結果をHTMLタグ込みで出力します。</p>
+        <script>
+            //変数、文字列、オブジェクトで初期化
+            const box = [123, "abc", new Date()];
+
+            document.write(`<p>box[0]の中身は${box[0]}です。`);
+            document.write(`<p>box[1]の中身は${box[1]}です。`);
+            document.write(`<p>box[2]の中身は${box[2]}です。`);
+        </script>
+    </body>
+</html>

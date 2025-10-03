@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1 id="id1">CSS3による回転アニメーション</h1>
+        <input type="button" value="回転スタート" onclick="startRotation()" />
+        <input type="button" value="回転ストップ" onclick="stopRotation()" />
+
+        <script>
+            let d = 0;
+            let timerID = null;
+
+            function rotationChar() {
+                d += 6;
+                d = d % 360;
+                document.getElementById("id1").style.transform = `rotateX(${d}deg)`;
+            }
+
+            function startRotation() {
+                if (timerID === null) {
+                    timerID = setInterval(rotationChar, 25);
+                }
+            }
+
+            function stopRotation() {
+                if (timerID !== null) {
+                    clearInterval(timerID);
+                    timerID = null;
+                }
+            }
+        </script>
+    </body>
+</html>

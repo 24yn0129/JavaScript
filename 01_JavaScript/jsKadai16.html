@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ブラウザサイズ判定</title>
+    </head>
+    <body>
+        <h1>ブラウザサイズ判定</h1>
+
+        <script>
+            let w = window.innerWidth;
+            if (w <= 960) {
+                document.write("スマートフォンまたはタブレットで閲覧している可能性があります。");
+            } else {
+                document.write("PC で閲覧しています。");
+            }
+        </script>
+    </body>
+</html>

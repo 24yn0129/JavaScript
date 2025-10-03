@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1>JavaScriptにおける値入力</h1>
+        <p>window.promptメソッドを使用し、値を入力した後に計算結果をHTMLタグ込みで出力します。</p>
+        <script>
+            //キーボードから値を入力
+            const x = window.prompt("税抜き価格を入力してください(半角数字)", "");
+
+            const zeikomi = x * 1.1;
+            const shohizei = x * 0.1;
+
+            document.write(`<p>税抜き価格が${x}円の場合、税込み価格は${zeikomi}円です。</p>`);
+            document.write(`<p>消費税は${shohizei}円です。</p>`);
+        </script>
+    </body>
+</html>

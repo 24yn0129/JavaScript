@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1 id="id1"></h1>
+        <script>
+            const opentime = new Date();
+
+            function dispTime() {
+                //ページを開いた時からの経過秒数を計算
+                const nowtime = new Date();
+                const seconds = (nowtime - opentime) / 1000;
+
+                //秒数を表示
+                document.getElementById("id1").innerHTML = `ページを開いてから :${seconds.toFixed(
+                    2
+                )}秒経過`;
+            }
+
+            //一定間隔で関数を繰り返し実行する
+            setInterval(dispTime, 10);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery入門</title>
+        <link href="box.css" rel="stylesheet" />
+        <script src="./jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div class="box">
+            <h1 align="center">角丸のボックスを作ってみよう</h1>
+            <p align="center">
+                タイトル部分のみ角丸の、ボックスを作成しよう。<br />
+                クリックするとこの部分が変化します。
+            </p>
+        </div>
+
+        <div class="sb">
+            <p align="center">ここにマウスオーバーするとboxが変化します。</p>
+        </div>
+
+        <script>
+            $(function () {
+                // class名「box」をクリックしたとき
+                $(".box").click(function () {
+                    // それ自身の背景色を設定
+                    $(this).css("background", "green");
+
+                    // class名「box」の子要素pタグのテキストを書き換える
+                    $(".box p").html(
+                        "クリックしてもテキストは元に戻りません。<br>" +
+                            "色はマウスホバーの戻り値によりマウスホバー後に戻ります"
+                    );
+                });
+
+                // class名「sb」のpタグをホバーしたとき
+                $(".sb p").hover(
+                    // マウスホバー中の処理
+                    function () {
+                        // クラス名boxの横幅を設定
+                        $(".box").css("width", "750px");
+                        // クラス名boxの背景色を設定
+                        $(".box").css("background", "blue");
+
+                        // クラス名boxのテキストを設定
+                        $(this).html("マウスホバー中");
+                    },
+                    // マウスホバー終了後の処理
+                    function () {
+                        //クラス名boxの横幅を初期値に戻す
+                        $(".box").css("width", "");
+                        // クラス名boxの背景色を初期値に戻す
+                        $(".box").css("background", "");
+                        // それ自身のテキストを設定する
+                        $(this).html("ホバー終了");
+                    }
+                );
+            });
+        </script>
+    </body>
+</html>

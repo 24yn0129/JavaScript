@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1>ビルトインオブジェクトの値取得</h1>
+        <p>
+            各オブジェクトの値が取得されます。これらの値は実行するタイミングに合わせて変わります。
+        </p>
+        <script>
+            const today = new Date();
+            document.write(today.getFullYear() + "年<br>");
+            document.write(today.getMonth() + 1 + "月<br>"); // 下記※1参照
+            document.write(today.getDate() + "日<br>");
+            document.write(today.getDay() + "番目の曜日<br>");
+            document.write(today.getHours() + "時<br>");
+            document.write(today.getMinutes() + "分<br>");
+            document.write(today.getSeconds() + "秒<br>");
+            document.write(today.getMilliseconds() + "ミリ秒<br>");
+        </script>
+    </body>
+</html>

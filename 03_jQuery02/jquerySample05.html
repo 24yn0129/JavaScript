@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery入門</title>
+        <!-- jQueryファイルの読み込み -->
+        <script src="./jquery-3.6.0.min.js"></script>
+        <script src="./jquery.validate.min.js"></script>
+    </head>
+    <body>
+        <h1>jQueryを利用したバリデーションチェック</h1>
+
+        <form id="myForm">
+            学籍番号: <input type="text" name="sno" /><br />
+            メールアドレス: <input type="text" name="smail" /><br />
+            <input type="submit" value="送信" />
+            <input type="reset" />
+        </form>
+
+        <script>
+            $(function () {
+                $("#myForm").validate({
+                    // バリデーションのルールを指定
+                    rules: {
+                        sno: {
+                            required: true,
+                            // 必須入力
+                            minlength: 8,
+                            // 最小8文字
+                            maxlength: 8,
+                            // 最大8文字
+                        },
+                        smail: {
+                            required: true,
+                            // 必須入力
+                            email: true,
+                            // メールアドレス形式
+                        },
+                    },
+                    // バリデーション違反時のエラーメッセージを指定
+                    messages: {
+                        sno: {
+                            required: "学籍番号を入れてください",
+                            minlength: "学籍番号は8文字です",
+                            maxlength: "学籍番号は8文字です",
+                        },
+                        smail: {
+                            required: "必ず入力してください",
+                            email: "正しいメールアドレスを入力してください",
+                        },
+                    },
+                });
+            });
+        </script>
+    </body>
+</html>

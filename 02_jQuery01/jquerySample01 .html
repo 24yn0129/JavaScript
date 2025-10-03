@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery入門</title>
+        <script src="./jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>jQuery</h1>
+        <p>jQueryによって、各タグに関するCSSを変更します。</p>
+
+        <p id="id1">この部分の文字の色が変わります。</p>
+        <div id="id2"><p>クリックするとこの部分の文字の色が変わります。</p></div>
+        <div id="id3"><p>クリックするとこの部分の背景色が変わります。</p></div>
+        <script>
+            //id名「id1」の文字色を青にする
+            $(function () {
+                $("#id1").css("color", "blue");
+            });
+
+            // id名「id2」がクリックされたとき、それ自身の文字色を赤にする
+            $(function () {
+                $("#id2").click(function () {
+                    $(this).css("color", "red");
+                });
+            });
+
+            // id名「id3」の子要素pがクリックされたとき、それ自身の背景を緑にする
+            $(function () {
+                $("#id3 p").click(function () {
+                    $(this).css("background-color", "green");
+                });
+            });
+        </script>
+    </body>
+</html>

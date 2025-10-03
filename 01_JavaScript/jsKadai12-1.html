@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript入門</title>
+    </head>
+    <body>
+        <h1 id="id1"></h1>
+
+        <!-- ストップウォッチ操作ボタン -->
+        <input type="button" value="スタート" onclick="start()" />
+        <input type="button" value="ストップ" onclick="stop()" />
+
+        <!-- 色変更ボタン -->
+        <input type="button" value="赤" onclick="changeColor('red')" />
+        <input type="button" value="青" onclick="changeColor('blue')" />
+        <input type="button" value="黒" onclick="changeColor('black')" />
+
+        <script>
+            let starttime;
+            let timerID = null;
+
+            function start() {
+                if (timerID === null) {
+                    starttime = new Date();
+                    timerID = setInterval(dispTime, 10);
+                }
+            }
+
+            function stop() {
+                clearInterval(timerID);
+                timerID = null;
+            }
+
+            function dispTime() {
+                let nowtime = new Date();
+                let seconds = (nowtime - starttime) / 1000;
+                document.getElementById(
+                    "id1"
+                ).innerHTML = `スタートボタンを押してから：${seconds.toFixed(2)}秒経過`;
+            }
+
+            // 色変更関数（h1 の文字色を変えるだけ）
+            function changeColor(color) {
+                document.getElementById("id1").style.color = color;
+            }
+        </script>
+    </body>
+</html>

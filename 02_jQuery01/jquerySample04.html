@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>予約フォーム</title>
+        <link href="./jquery-ui.css" rel="stylesheet" />
+        <script src="./jquery-3.6.0.min.js"></script>
+        <script src="./jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <h3>ご予約日</h3>
+        <p>ご希望の日にちをお選びください。</p>
+        <form>
+            <p><input type="text" id="cal" /></p>
+            <input type="submit" value="送信" />
+            <input type="reset" />
+        </form>
+
+        <script>
+            $(function () {
+                // id名「cal」の要素にdatepickerを適用する
+                $("#cal").datepicker({
+                    //datepickerのオプション指定
+                    numberOfMonths: 1,
+                    //一度に表示する月数
+                    showButtonPanel: true,
+                    //「Today」「Done」ボタンを表示する
+                    showMonthAfterYear: true,
+                    //年後ろに月を表示する
+                });
+            });
+        </script>
+    </body>
+</html>
