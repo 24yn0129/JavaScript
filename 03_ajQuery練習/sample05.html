@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>jQuery 練習5</title>
+<script src="jquery-3.6.0.min.js"></script>    </head>
+    <body>
+        <h1 id="id1">ここをダブルクリックしてね</h1>
+        <p id="id2">ここは id2。背景を赤に</p>
+        <p id="id3">ここは id3。文字を青に</p>
+
+        <script>
+            $(function () {
+                $("#id1").dblclick(function () {
+                    $(this).text("ダブルクリックされました!");
+                    $("#id2").css("background-color", "red");
+                    $("#id3").css("color", "blue");
+                });
+            });
+        </script>
+    </body>
+</html>

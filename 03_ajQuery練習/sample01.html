@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>jQuery 練習1</title>
+        <script src="jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1 id="id1">ここをクリックしてね</h1>
+
+        <script>
+            $(function () {
+                $("#id1").click(function () {
+                    $(this).css("background-color", "green");
+                });
+            });
+        </script>
+    </body>
+</html>

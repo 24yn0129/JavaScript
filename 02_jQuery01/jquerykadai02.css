@@ -1,14 +1,14 @@
-dl{
-	width:402px;
-	margin:50px auto;
+dl {
+    width: 402px;
+    margin: 50px auto;
 }
-dl dt{
-	background:#7CADB6;
-	cursor:pointer;
+dl dt {
+    background: #7cadb6;
+    cursor: pointer;
 }
-dl dd{
-	border:1px solid #7CADB6;
-	height:225px;
-	margin:0;
-	display:none
+dl dd {
+    border: 1px solid #7cadb6;
+    height: 225px;
+    margin: 0;
+    display: none;
 }

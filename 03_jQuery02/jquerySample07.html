@@ -3,18 +3,20 @@
     <meta charset="utf-8">
     <title>jQuery入門</title>
     <!-- CSS, jQuery, JavaScriptファイルの読み込み -->
-
-
-
+<script src="./jquery-3.6.0.min.js"></script>
+<script src="./modalwin.js"></script>
+<link href="modalwin.css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>jQueryを利用したモーダルウィンドウの作成</h1>
-
-
-
-
-
-
+<h1>jQueryを利用したモーダルウィンドウの作成</h1>
+<ul id="modalwin">
+  <li><a href="images/photo1.jpg" class="modal"><img src="images/photo1_thum.jpg" alt="シャンデリア"></a></li>
+  <li><a href="images/photo2.jpg" class="modal"><img src="images/photo2_thum.jpg" alt="バラ"></a></li>
+  <li><a href="images/photo3.jpg" class="modal"><img src="images/photo3_thum.jpg" alt="海"></a></li>
+  <li><a href="images/photo4.jpg" class="modal"><img src="images/photo4_thum.jpg" alt="門"></a></li>
+</ul>
+<div id="glayLayer"></div>
+<div id="overLayer"></div>
 
 </body>
 </html>

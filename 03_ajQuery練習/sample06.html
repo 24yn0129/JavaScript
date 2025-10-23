@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>jQuery 練習6</title>
+        <script src="jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1 id="id1">ここにマウスをホバーしてね</h1>
+
+        <script>
+            $(function () {
+                $("#id1").hover(
+                    // This function runs when the mouse enters
+                    function () {
+                        $(this).css("color", "red");
+                        $(this).text("マウスホバー中");
+                    },
+                    // This function runs when the mouse leaves
+                    function () {
+                        $(this).css("color", "");
+                        $(this).text("ホバー終了");
+                    }
+                );
+            });
+        </script>
+    </body>
+</html>

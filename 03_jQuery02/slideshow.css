@@ -1,31 +1,16 @@
 @charset "UTF-8";
-html,body{
-	margin:0;
-	padding:0;
-	height:100%;
-}
-/* h1{
-	margin:20px 50px;
-	font-size:large;
-	border-left:10px solid #7BAEB5;
-	border-bottom:1px solid #7BAEB5;
-	padding:10px;
-	width:600px;
-} */
-
 #slide-items {
     list-style-type: none;
     pointer-events: none;
     position: relative;
-    height: 427px;
 }
-
+/* id名 slide-items 直下のli要素を透明に */
 #slide-items > li {
-    opacity: 0;
+    opacity: 0; /* 透明 */
     position: absolute;
-    transition: opacity 1s;
+    transition: opacity 1s; /* 透明(opacity)の変化に1秒かける*/
 }
-
+/* クラス名 current が付いた要素を表示 */
 #slide-items > li.current {
-    opacity: 1;
+    opacity: 1; /*不透明(表示)*/
 }

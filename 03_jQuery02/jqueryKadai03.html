@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery課題3 - バリデーションチェック</title>
+        <script src="./jquery-3.6.0.min.js"></script>
+        <script src="./jquery.validate.min.js"></script>
+    </head>
+    <body>
+        <h1>jQueryを利用したバリデーションチェック</h1>
+
+        <form id="myForm">
+            学籍番号: <input type="text" name="sno" /><br />
+            名前: <input type="text" name="name" /><br />
+            郵便番号: <input type="text" name="zip" /><br />
+            住所: <input type="text" name="address" /><br />
+            電話番号: <input type="text" name="tel" /><br />
+            メールアドレス: <input type="text" name="email" /><br />
+
+            <span></span>
+            <div>
+                <input type="submit" value="送信" />
+                <input type="reset" />
+            </div>
+        </form>
+
+        <script>
+            $(function () {
+                $("#myForm").validate({
+                    // バリデーションのルールを指定
+                    rules: {
+                        sno: {
+                            required: true,
+                            minlength: 8,
+                            maxlength: 8,
+                        },
+                        name: {
+                            required: true,
+                        },
+                        zip: {
+                            digits: true, // 数字のみ
+                            minlength: 7,
+                            maxlength: 7,
+                        },
+                        // 住所は任意なのでルールなし
+                        tel: {
+                            digits: true, // 数字のみ
+                            minlength: 10,
+                            maxlength: 11,
+                        },
+                        email: {
+                            required: true,
+                            email: true,
+                        },
+                    },
+                    // バリデーション違反時のエラーメッセージを指定
+                    messages: {
+                        sno: {
+                            required: "学籍番号は必須です",
+                            minlength: "学籍番号は8文字で入力してください",
+                            maxlength: "学籍番号は8文字で入力してください",
+                        },
+                        name: {
+                            required: "名前は必須です",
+                        },
+                        zip: {
+                            digits: "郵便番号は数字のみで入力してください",
+                            minlength: "郵便番号は7桁で入力してください",
+                            maxlength: "郵便番号は7桁で入力してください",
+                        },
+                        tel: {
+                            digits: "電話番号は数字のみで入力してください",
+                            minlength: "電話番号は10桁から11桁で入力してください",
+                            maxlength: "電話番号は10桁から11桁で入力してください",
+                        },
+                        email: {
+                            required: "メールアドレスは必須です",
+                            email: "正しいメールアドレスの形式で入力してください",
+                        },
+                    },
+                    // エラーメッセージの表示場所や方法を調整
+                    errorPlacement: function (error, element) {
+                        // エラーメッセージを改行の直前ではなく、入力欄のすぐ後ろに表示する
+                        error.insertAfter(element);
+                    },
+                });
+            });
+        </script>
+    </body>
+</html>

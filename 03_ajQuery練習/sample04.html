@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>jQuery 練習4</title>
+<script src="jquery-3.6.0.min.js"></script>    </head>
+    <body>
+        <div id="id1">
+            <h1>ここをクリックしてね</h1>
+            <h1>ここでもいいよ</h1>
+        </div>
+        <h1>ここは違うよ</h1>
+
+        <script>
+            $(function () {
+                $("#id1 h1").click(function () {
+                    $(this).css("color", "red");
+                    $(this).text("クリックされました!");
+                });
+            });
+        </script>
+    </body>
+</html>
